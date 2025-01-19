@@ -1,0 +1,126 @@
+/* App.css */
+
+/* 設置整個應用程式的背景和字體樣式 */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f4f4f4;
+}
+
+/* 包裹整個遊戲容器 */
+.game {
+  display: flex;
+  justify-content: flex-start; /* 讓棋盤和遊戲資訊並排 */
+  align-items: flex-start;
+  flex-direction: row; /* 改為水平排列 */
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 600px;
+}
+
+/* 標題樣式，顯示當前遊戲狀態 */
+.status {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* 包裹每行棋格的容器 */
+.board-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* 棋格按鈕樣式 */
+.square {
+  background-color: #fff;
+  border: 2px solid #4caf50;
+  border-radius: 4px;
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 當按下棋格時的效果 */
+.square:active {
+  background-color: #d4edda;
+  transform: scale(0.95);
+}
+
+/* 當滑鼠移到棋格上時 */
+.square:hover {
+  background-color: #f0f8ff;
+}
+
+/* 手機響應式支援 */
+@media (max-width: 600px) {
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    line-height: 60px;
+  }
+
+  .game {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column; /* 小螢幕時將遊戲板和遊戲資訊變成垂直排列 */
+  }
+
+  .status {
+    font-size: 20px;
+  }
+}
+
+/* 历史记录和跳转按钮的样式 */
+.game-info {
+  display: flex;
+  flex-direction: column; /* 將按鈕排成縱向 */
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.game-info ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.game-info li {
+  margin: 5px 0;
+}
+
+.game-info button {
+  font-size: 16px;
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.game-info button:hover {
+  background-color: #45a049;
+}
+
+.game-info button:focus {
+  outline: none;
+}
